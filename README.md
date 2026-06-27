@@ -78,3 +78,14 @@ Chạy script:
 - `factorial.py`
 - `network_info.sh`
 - `number_check.sh`
+- `de_so_4_flow.puml`
+
+## Sơ đồ PlantUML
+
+File `de_so_4_flow.puml` mô tả luồng xử lý của 5 câu trong đề.
+
+Có thể xuất sơ đồ bằng lệnh:
+
+```bash
+plantuml de_so_4_flow.puml
+```

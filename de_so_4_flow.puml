@@ -1,0 +1,56 @@
+@startuml de_so_4_flow
+title Đề số 4 - Luồng xử lý bài Linux
+
+start
+
+partition "Câu 1: trích xuất điểm" {
+  :Tạo marks.csv;
+  :Lấy cột điểm và học kỳ;
+  :Ghi mark_extract.csv;
+}
+
+partition "Câu 2: nối và lọc điểm" {
+  :Tạo marks2.csv;
+  :Nối marks.csv và marks2.csv;
+  :Ghi all_marks.csv;
+  :Dùng grep lọc điểm >= 8;
+  :Ghi high_scores.csv;
+}
+
+partition "Câu 3: giai thừa" {
+  :Chạy factorial.py;
+  :Nhập số nguyên n;
+  if (n < 0?) then (Có)
+    :Thông báo không tính được giai thừa;
+  else (Không)
+    :Tính n!;
+    :In kết quả;
+  endif
+}
+
+partition "Câu 4: thông tin mạng" {
+  :Chạy network_info.sh;
+  :In địa chỉ IP bằng hostname -I;
+  :In tên host bằng hostname;
+}
+
+partition "Câu 5: kiểm tra số" {
+  :Chạy number_check.sh;
+  :Nhập một số;
+  if (Số chia hết cho 2?) then (Có)
+    :In số chẵn;
+  else (Không)
+    :In số lẻ;
+  endif
+
+  if (Số > 0?) then (Có)
+    :In số dương;
+  elseif (Số < 0?) then (Có)
+    :In số âm;
+  else (Không)
+    :In số bằng 0;
+  endif
+}
+
+stop
+@enduml
