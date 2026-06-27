@@ -1,74 +1,74 @@
-# De so 4 - Linux
+# Đề số 4 - Linux
 
-Sinh vien: Pham Thi Thu Thuy  
-Ma sinh vien: 2300960  
+Sinh viên: Phạm Thị Thu Thủy  
+Mã sinh viên: 2300960  
 Git name: phamthithuthuy  
 Git email: phamthuthuy071105@gmail.com
 
-## Noi dung bai lam
+## Nội dung bài làm
 
-### Cau 1
+### Câu 1
 
-Tao file `marks.csv` gom cac cot:
+Tạo file `marks.csv` gồm các cột:
 
-- ho ten
-- ma SV
-- mon hoc
-- diem
-- hoc ky
+- họ tên
+- mã SV
+- môn học
+- điểm
+- học kỳ
 
-Lay cot diem va hoc ky, luu vao `mark_extract.csv`.
+Lấy cột điểm và học kỳ, lưu vào `mark_extract.csv`.
 
-Lenh tham khao:
+Lệnh tham khảo:
 
 ```bash
 cut -d, -f4,5 marks.csv > mark_extract.csv
 ```
 
-### Cau 2
+### Câu 2
 
-Tao them file `marks2.csv`, noi `marks.csv` va `marks2.csv` thanh `all_marks.csv`.
+Tạo thêm file `marks2.csv`, nối `marks.csv` và `marks2.csv` thành `all_marks.csv`.
 
-Loc cac dong co diem >= 8 va luu vao `high_scores.csv`.
+Lọc các dòng có điểm >= 8 và lưu vào `high_scores.csv`.
 
-Lenh tham khao:
+Lệnh tham khảo:
 
 ```bash
 awk 'NR==1 || FNR>1 { print }' marks.csv marks2.csv > all_marks.csv
 grep -E ',(8|9|10),' all_marks.csv > high_scores.csv
 ```
 
-### Cau 3
+### Câu 3
 
-File `factorial.py` nhap so nguyen `n`, tinh va in giai thua cua `n`.
+File `factorial.py` nhập số nguyên `n`, tính và in giai thừa của `n`.
 
-Chay chuong trinh:
+Chạy chương trình:
 
 ```bash
 python3 factorial.py
 ```
 
-### Cau 4
+### Câu 4
 
-File `network_info.sh` in dia chi IP va ten host.
+File `network_info.sh` in địa chỉ IP và tên host.
 
-Chay script:
+Chạy script:
 
 ```bash
 ./network_info.sh
 ```
 
-### Cau 5
+### Câu 5
 
-File `number_check.sh` nhap mot so, kiem tra chan/le va duong/am.
+File `number_check.sh` nhập một số, kiểm tra chẵn/lẻ và dương/âm.
 
-Chay script:
+Chạy script:
 
 ```bash
 ./number_check.sh
 ```
 
-## Danh sach file
+## Danh sách file
 
 - `marks.csv`
 - `mark_extract.csv`
